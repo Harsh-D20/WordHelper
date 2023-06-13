@@ -39,7 +39,6 @@ public class Trie {
 
     public boolean contains(String word) {
         word = word.toUpperCase();
-        
         TrieNode cur = root;
         for (char letter : word.toCharArray()) {
             Map<Character, TrieNode> kids = cur.getChildren();
