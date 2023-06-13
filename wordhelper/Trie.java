@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Trie {
-    
+
     private TrieNode root;
 
     public Trie() {
@@ -56,14 +56,7 @@ public class Trie {
     public Character mostLikelyNextChar(String prefix) {
         prefix = prefix.toUpperCase();
         try {
-            TrieNode cur = root;
-            for (char letter : prefix.toCharArray()) {
-                if (cur == null) {
-                    return '_';
-                }
-                Map<Character, TrieNode> kids = cur.getChildren();
-                cur = kids.get(letter);
-            }
+            TrieNode cur = getEndNode(prefix);
             int max = 0;
             char maxC = '_';
             for (Map.Entry<Character, TrieNode> e : cur.getChildren().entrySet()) {
@@ -81,26 +74,28 @@ public class Trie {
     public HashMap<Character, Integer> prefixFreqTable(String prefix) {
         prefix = prefix.toUpperCase();
         try {
-            TrieNode cur = root;
-            for (char letter : prefix.toCharArray()) {
-                if (cur == null) {
-                    return new HashMap<>();
-                }
-                Map<Character, TrieNode> kids = cur.getChildren();
-                cur = kids.get(letter);
-            }
+            TrieNode cur = getEndNode(prefix);
 
             HashMap<Character, Integer> table = new HashMap<>();
 
-            for(Map.Entry<Character, TrieNode> e : cur.getChildren().entrySet()) {
+            for (Map.Entry<Character, TrieNode> e : cur.getChildren().entrySet()) {
                 table.put(e.getKey(), e.getValue().getCount());
             }
 
             return table;
-            
+
         } catch (NullPointerException n) {
-            return new HashMap<>();
+            return new HashMap<Character, Integer>();
         }
+    }
+
+    private TrieNode getEndNode(String str) {
+        TrieNode cur = root;
+        for (char letter : str.toCharArray()) {
+            Map<Character, TrieNode> kids = cur.getChildren();
+            cur = kids.get(letter);
+        }
+        return cur;
     }
 
     /*********** INNER CLASS ****/
