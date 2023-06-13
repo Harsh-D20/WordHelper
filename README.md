@@ -88,4 +88,4 @@ false - the word does not exist
 
 ## How to contribute
 If a word exists and is not in the words.txt file, feel free to add it! Any helpful changes are welcome! 
-Please rebuild the jar file when any changes are made. Please do not change the header of the Trie.java file. 
+Please rebuild the jar file when any changes are made. Please do not remove the header of the Trie.java file. 
