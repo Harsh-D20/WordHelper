@@ -1,6 +1,7 @@
 package wordhelper;
 
 import java.io.*;
+import java.util.HashMap;
 
 public class WordHelper {
     static Trie trie;
@@ -38,4 +39,17 @@ public class WordHelper {
             else return NOT_WORD;
         }
     }
+
+    public static Character mostLikelyNextChar(String word) {
+        return trie.mostLikelyNextChar(word);
+    }
+
+    public static Boolean contains(String word) {
+        return trie.contains(word);
+    }
+
+    public static HashMap<Character, Integer> prefixFreqTable(String prefix) {
+        return new HashMap<Character, Integer>();
+    }
+
 }
