@@ -51,44 +51,44 @@ This represents a word that is a word, and cannot be made longer with added lett
 
 ## WordHelper Methods
 
-**public static Integer lookup(String word)**
-Returns an Integer representing the state of specified word.
-Parameters:
-word - word to check
+**public static Integer lookup(String word)**\
+Returns an Integer representing the state of specified word.\
+Parameters:\
+word - word to check\
 
-Returns:
-This will return one of four Integers:
-NOT_WORD - the specified word does not exist
-CAN_WORD - the specified word is not a valid word, but can be with additional letters
-PARTIAL_WORD - the specified word is a valid word, but can be a longer word with additional letters
-COMPLETE_WORD - the specified word is a valid word, and cannot be made longer with additional letters
+Returns:\
+This will return one of four Integers:\
+NOT_WORD - the specified word does not exist\
+CAN_WORD - the specified word is not a valid word, but can be with additional letters\
+PARTIAL_WORD - the specified word is a valid word, but can be a longer word with additional letters\
+COMPLETE_WORD - the specified word is a valid word, and cannot be made longer with additional letters\
 
-**public static Character mostLikelyNextChar(String prefix)**
-Returns the most likely next character for the specified prefix.
-Parameters:
-prefix - the string whose most likely next letter will be found
+**public static Character mostLikelyNextChar(String prefix)**\
+Returns the most likely next character for the specified prefix.\
+Parameters:\
+prefix - the string whose most likely next letter will be found\
 
-Returns:
-A Character that will be either an alphabet or an underscore:
-_ - the specified prefix has no possible continuations
+Returns:\
+A Character that will be either an alphabet or an underscore:\
+_ - the specified prefix has no possible continuations\
 
-**public static HashMap<Character, Integer> prefixFreqTable(String prefix)**
-Returns a HashMap with all possible continuations and their frequencies.
-Parameters:
-prefix - prefix whose continuations will be found.
+**public static HashMap<Character, Integer> prefixFreqTable(String prefix)**\
+Returns a HashMap with all possible continuations and their frequencies.\
+Parameters:\
+prefix - prefix whose continuations will be found.\
 
-Returns:
-A HashMap of all possible continuations and the number of words that have those continuations. An empty HashMap means there are no possible continuations.
+Returns:\
+A HashMap of all possible continuations and the number of words that have those continuations. An empty HashMap means there are no possible continuations.\
 
-**public static Boolean contains(String word)**
+**public static Boolean contains(String word)**\
 Returns whether or not a full word exists. e.g. even though "FLI" is contained in other words,
-WordHelper.contains("FLI") will return false as it is not a valid word on its own.
-Parameters:
-word - word to be checked
+WordHelper.contains("FLI") will return false as it is not a valid word on its own.\
+Parameters:\
+word - word to be checked\
 
-Returns:
-true - the word exists
-false - the word does not exist
+Returns:\
+true - the word exists\
+false - the word does not exist\
 
 ## How to contribute
 
