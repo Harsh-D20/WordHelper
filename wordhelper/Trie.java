@@ -5,6 +5,8 @@ https://github.com/eugenp/tutorials/tree/master/data-structures
 
 Edited by Chris Haver to make some of the implementation more familiar 
 to Data Structure Students and to add count attribute to TrieNode.
+
+Edited further by Harsh Desai to work with WordHelper class.
 */
 
 package wordhelper;
