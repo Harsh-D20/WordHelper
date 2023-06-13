@@ -37,16 +37,16 @@ System.out.println(WordHelper.contains(exampleWord));
 
 ## WordHelper Class Constants
 
-**public static final int NOT_WORD**
+**public static final int NOT_WORD**\
 This represents a word that is not a word.
 
-**public static final int CAN_WORD**
+**public static final int CAN_WORD**\
 This represents a word that is not a word, but can be a word with added letters.
 
-**public static final int PARTIAL_WORD**
+**public static final int PARTIAL_WORD**\
 This represents a word that is a word, but can be a longer word with added letters.
 
-**public static final int COMPLETE_WORD**
+**public static final int COMPLETE_WORD**\
 This represents a word that is a word, and cannot be made longer with added letters.
 
 ## WordHelper Methods
