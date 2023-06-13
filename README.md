@@ -73,7 +73,7 @@ Parameters:<br />
 prefix - prefix whose continuations will be found.
 
 Returns:<br />
-A HashMap of all possible continuations and the number of words that have those continuations
+A HashMap of all possible continuations and the number of words that have those continuations. An empty HashMap means there are no possible continuations.
 
 **public static Boolean contains(String word)**<br />
 Returns whether or not a full word exists. e.g. even though "FLI" is contained in other words, 
