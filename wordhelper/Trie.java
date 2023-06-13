@@ -38,8 +38,8 @@ public class Trie {
     }
 
     public boolean contains(String word) {
-        TrieNode cur = root;
         word = word.toUpperCase();
+        TrieNode cur = root;
         for (char letter : word.toCharArray()) {
             Map<Character, TrieNode> kids = cur.getChildren();
             if (kids.containsKey(letter)) {
