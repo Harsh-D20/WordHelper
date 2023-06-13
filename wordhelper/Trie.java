@@ -78,6 +78,31 @@ public class Trie {
         }
     }
 
+    public HashMap<Character, Integer> prefixFreqTable(String prefix) {
+        prefix = prefix.toUpperCase();
+        try {
+            TrieNode cur = root;
+            for (char letter : prefix.toCharArray()) {
+                if (cur == null) {
+                    return new HashMap<>();
+                }
+                Map<Character, TrieNode> kids = cur.getChildren();
+                cur = kids.get(letter);
+            }
+
+            HashMap<Character, Integer> table = new HashMap<>();
+
+            for(Map.Entry<Character, TrieNode> e : cur.getChildren().entrySet()) {
+                table.put(e.getKey(), e.getValue().getCount());
+            }
+
+            return table;
+            
+        } catch (NullPointerException n) {
+            return new HashMap<>();
+        }
+    }
+
     /*********** INNER CLASS ****/
     class TrieNode {
         private final Map<Character, TrieNode> children;

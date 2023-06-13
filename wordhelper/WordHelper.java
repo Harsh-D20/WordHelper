@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.HashMap;
 
 public class WordHelper {
-    static Trie trie;
+    private static Trie trie;
     public static final int NOT_WORD = 0, CAN_WORD = 1, PARTIAL_WORD = 2, COMPLETE_WORD = 3;
     static {
         trie = new Trie();
@@ -49,7 +49,7 @@ public class WordHelper {
     }
 
     public static HashMap<Character, Integer> prefixFreqTable(String prefix) {
-        return new HashMap<Character, Integer>();
+        return trie.prefixFreqTable(prefix);
     }
 
 }
