@@ -8,6 +8,9 @@ You can download the full project and build it into a jar file and import,
 OR
 you can download the jar file at the following path: WordHelper/WordHelper_jar
 
+You should use the following import in your project:
+import wordhelper.WordHelper;
+
 ## How to use
 
 ```java
