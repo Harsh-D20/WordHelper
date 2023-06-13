@@ -4,6 +4,7 @@ import java.io.*;
 
 public class WordHelper {
     static Trie trie;
+    public static final int NOT_WORD = 0, CAN_WORD = 1, PARTIAL_WORD = 2, COMPLETE_WORD = 3;
     static {
         trie = new Trie();
         loadFile();
@@ -28,13 +29,13 @@ public class WordHelper {
         char res = trie.mostLikelyNextChar(word);
         if(trie.contains(word)) {
             if(res == '_')
-                return 3;
-            else return 2;
+                return COMPLETE_WORD;
+            else return PARTIAL_WORD;
         }
         else {
             if(res != '_')
-                return 1;
-            else return 0;
+                return CAN_WORD;
+            else return NOT_WORD;
         }
     }
 }
