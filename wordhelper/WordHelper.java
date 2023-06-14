@@ -26,7 +26,7 @@ public class WordHelper {
 		}
     }
 
-    public static Integer lookup(String word) {
+    public static int lookup(String word) {
         char res = trie.mostLikelyNextChar(word);
         if(trie.contains(word)) {
             if(res == '_')
@@ -40,11 +40,11 @@ public class WordHelper {
         }
     }
 
-    public static Character mostLikelyNextChar(String word) {
+    public static char mostLikelyNextChar(String word) {
         return trie.mostLikelyNextChar(word);
     }
 
-    public static Boolean contains(String word) {
+    public static boolean contains(String word) {
         return trie.contains(word);
     }
 
